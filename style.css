@@ -10,6 +10,84 @@ h1{
     height: 5rem;
     line-height: 5rem;
 }
+.rules-button {
+    position: fixed;
+    right: 20px;
+    top: 16px;
+    background-color: rgb(129, 96, 176);
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 100;
+}
+.rules-button:hover {
+    background-color: rgb(160, 120, 200);
+}
+.rules-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.rules-popup.show{
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+.popup-content {
+    position: relative;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 450px;
+    max-width: 90%;
+    text-align: left;
+    animation: slideIn 0.5s ease-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+h2 {
+    color: rgb(129, 96, 176);
+    margin-bottom: 20px;
+}
+.rules-list li {
+    margin-bottom: 15px;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 3rem;
+    cursor: pointer;
+    color: rgb(129, 96, 176);
+}
+.close-btn:hover {
+    color: red;
+}
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.rules-popup.hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
 .choices{
     display: flex;
     justify-content: center;
@@ -44,13 +122,24 @@ img{
     margin: 3rem;
     gap: 5rem;
 }
-#user-score,#comp-score{
+.round-number{
+    font-size: 2rem;
+    margin: 3rem;
+    gap: 5rem;
+}
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+#user-score,#draw-score,#comp-score{
     font-size: 4rem;
+    margin: 0;
 }
 .msg-container {
     margin-top: 5rem;
- }
-  
+}
 #msg {
     background-color: rgb(129, 96, 176);
     color: #fff;
@@ -58,4 +147,17 @@ img{
     display: inline;
     padding: 1rem;
     border-radius: 1rem;
-  }
+}
+#reset-btn {
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: rgb(129, 96, 176);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+#reset-btn:hover {
+    background-color: rgb(100, 70, 150);
+}
